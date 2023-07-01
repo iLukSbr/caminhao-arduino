@@ -7,7 +7,7 @@ Autor: Lucas Yukio Fukuda Matsumoto
   
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=skqn2S_cQes"><img src="https://img.youtube.com/vi/skqn2S_cQes/0.jpg" alt="Projeto Final"></a>
+  <a href="https://www.youtube.com/watch?v=skqn2S_cQes"><img src="https://i.imgur.com/DMokY2l.jpg" alt="Projeto Final"></a>
 </div>
 
   
