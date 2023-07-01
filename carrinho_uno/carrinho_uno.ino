@@ -23,6 +23,7 @@
 #define FREIO_ACESO 7
 #define FREIO_APAGADO 8
 
+/* MOTORES */
 AF_DCMotor dianteiro_esq(2); 
 AF_DCMotor dianteiro_dir(3); 
 AF_DCMotor traseiro_esq(1); 
@@ -164,6 +165,7 @@ void giraOlhos(){
   }
 }
 
+/* SENSOR ULTRASSÔNICO */
 void hcsr04(){
   distancia = ultrasonic.read(CM);
   if(distancia < DISTANCIA_COLISAO)
@@ -190,6 +192,7 @@ void loop() {
   delay(100);
 }
 
+/* RECEPTOR I2C */
 void receiveEvent(int howMany){
   valor_recebido = Wire.read();
   switch (valor_recebido){
