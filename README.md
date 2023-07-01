@@ -3,11 +3,11 @@
 Autor: Lucas Yukio Fukuda Matsumoto
 
   Códigos de um caminhão guincho de Arduino com controles RF e infravermelho, Projeto Final da disciplina EEX11 – INTRODUÇÃO À PRÁTICAS DE LABORATÓRIO EM ELETRICIDADE E ELETRÔNICA, da Universidade Tecnológica Federal do Paraná.
-<br />
+  
 <div align="center">
   <a href="https://www.youtube.com/watch?v=skqn2S_cQes"><img src="https://img.youtube.com/vi/skqn2S_cQes/0.jpg" alt="Projeto Final"></a>
 </div>
-<br />
+  
   O Arduino Uno recebe o shield ponte H 4WD L293D, o Micro recebe os receptores, e o Nano os emissores.
 
   A miniatura de caminhão guincho é controlada tanto por controle infravermelho quanto por joystick de radiofrequência simultaneamente, tendo como base o kit carrinho de acrílico para Arduino com shield disponível comercialmente. Ele possui tração nas 4 rodas, faróis de LED, setas de LED sequenciais com som “tick” de piscada, luz de freio LED, buzina, braço robótico com garra, sensor de obstáculos, carregamento de baterias por micro USB ou conector P4 12 V, baterias de Li-íon e carroceria decorativa de papelão.
