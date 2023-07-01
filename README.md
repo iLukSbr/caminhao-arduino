@@ -8,9 +8,9 @@ Autor: Lucas Yukio Fukuda Matsumoto
 <div align="center">
   <a href="https://www.youtube.com/watch?v=skqn2S_cQes"><img src="https://img.youtube.com/vi/skqn2S_cQes/0.jpg" alt="Projeto Final"></a>
 </div>
-<br />
+
   O Arduino Uno recebe o shield ponte H 4WD L293D, o Micro recebe os receptores, e o Nano os emissores.
-<br />
+
   A miniatura de caminhão guincho é controlada tanto por controle infravermelho quanto por joystick de radiofrequência simultaneamente, tendo como base o kit carrinho de acrílico para Arduino com shield disponível comercialmente. Ele possui tração nas 4 rodas, faróis de LED, setas de LED sequenciais com som “tick” de piscada, luz de freio LED, buzina, braço robótico com garra, sensor de obstáculos, carregamento de baterias por micro USB ou conector P4 12 V, baterias de Li-íon e carroceria decorativa de papelão.
 
   O software embarcado está em um Arduino Uno R3 e em um Arduino Micro. Ambos se comunicam e enviam comandos entre si via I2C, então a relação é igual, não há escravidão de microcontrolador. O Uno está responsável pelas rodas e sensor de obstáculos ultrassônico, e o Micro pelos controles infravermelho e RF e dos relés. São alimentados por 9 VCC. O Micro foi necessário porque o infravermelho e RF usam o mesmo clock do shield motor, então dava conflito e não funcionava.
