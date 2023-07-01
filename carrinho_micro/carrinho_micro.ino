@@ -53,19 +53,32 @@ uint16_t pulso_servo_garra = GARRA_FECHADA;
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 void setup() {
+  /* I2C */
   Wire.begin(ENDERECO_NANO);
   Wire.onReceive(receiveEvent);
+
+  /* RECEPTOR INFRAVERMELHO */
   IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
+
+
   pinMode(PIN_BUZINA, OUTPUT);
   pinMode(PIN_SETA_DIREITA, OUTPUT);
   pinMode(PIN_SETA_ESQUERDA, OUTPUT);
   pinMode(PIN_FAROIS, OUTPUT);
   pinMode(PIN_LUZ_FREIO, OUTPUT);
+
+  // desarma os relés
+  //(módulo 4 relés desarma com high)
   digitalWrite(PIN_BUZINA, HIGH);
   digitalWrite(PIN_SETA_DIREITA, HIGH);
   digitalWrite(PIN_SETA_ESQUERDA, HIGH);
   digitalWrite(PIN_FAROIS, HIGH);
+
+  //arma o relé do freio
+  //(módulo 1 relé desarma com low)
   digitalWrite(PIN_LUZ_FREIO, HIGH);
+
+  /* MÓDULO 16 SERVOS PWM */
   pwm.begin();
   pwm.setOscillatorFrequency(OSCIL_FREQ);
   pwm.setPWMFreq(SERVO_FREQ);
@@ -73,11 +86,14 @@ void setup() {
   pwm.setPWM(SERVO_CIMA_BAIXO, 0, pulso_servo_cima_baixo);
   pwm.setPWM(SERVO_FRENTE_TRAS, 0, pulso_servo_frente_tras);
   pwm.setPWM(SERVO_GARRA, 0, pulso_servo_garra);
+
+  /* RECEPTOR RF */
   vw_set_rx_pin(PIN_RECEIVER);
   vw_setup(2000);
   vw_rx_start();
 }
 
+/* I2C */
 void receiveEvent(int howMany){
   valor_i2c = Wire.read();
   if(valor_i2c == FREIO_ACESO)
@@ -86,6 +102,7 @@ void receiveEvent(int howMany){
     digitalWrite(PIN_LUZ_FREIO, LOW);
 }
 
+/* SERVOMOTORES DO BRAÇO ROBÓTICO */
 void servoFrente(){
   pulso_servo_frente_tras += INCREMENTO_PWM;
   if(pulso_servo_frente_tras > PRA_FRENTE)
@@ -137,6 +154,7 @@ void servoEsquerda(){
 }
 
 void loop() {
+  /* RECEPTOR INFRAVERMELHO */
   if (IrReceiver.decode()) {
     valor_recebido = IrReceiver.decodedIRData.command;
     switch (valor_recebido){
@@ -195,6 +213,8 @@ void loop() {
     }
     IrReceiver.resume();
   }
+
+  /* RECEPTOR RF */
   if (vw_get_message(message, &len)){
     if(message[0] == 5)
       servoDireita();
