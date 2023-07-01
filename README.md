@@ -1,7 +1,7 @@
 # Caminhão Guincho com Arduino
 
 Autor: Lucas Yukio Fukuda Matsumoto
-<pre>
+
    Códigos de um caminhão guincho de Arduino com controles RF e infravermelho, Projeto Final da disciplina EEX11 – INTRODUÇÃO À PRÁTICAS DE LABORATÓRIO EM ELETRICIDADE E ELETRÔNICA, da Universidade Tecnológica Federal do Paraná.
 <br />
 <br />
