@@ -4,7 +4,9 @@ Autor: Lucas Yukio Fukuda Matsumoto
 
 Códigos de um caminhão guincho de Arduino com controles RF e infravermelho, Projeto Final da disciplina EEX11 – INTRODUÇÃO À PRÁTICAS DE LABORATÓRIO EM ELETRICIDADE E ELETRÔNICA, da Universidade Tecnológica Federal do Paraná.
 
+<p align="center">
 [![Projeto Final](http://img.youtube.com/vi/skqn2S_cQes/0.jpg)](http://www.youtube.com/watch?v=skqn2S_cQes "Caminhão Guincho com Arduino")
+</p>
 
 O Arduino Uno recebe o shield ponte H 4WD L293D, o Micro recebe os receptores, e o Nano os emissores.
 
